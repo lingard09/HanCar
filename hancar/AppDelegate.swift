@@ -1,27 +1,24 @@
 import SwiftUI
 import FirebaseCore
 
-
 class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+  func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
+  ) -> Bool {
     FirebaseApp.configure()
-
     return true
   }
 }
 
 @main
 struct hancar: App {
-  // register app delegate for Firebase setup
-  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
+  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
   var body: some Scene {
     WindowGroup {
-      NavigationView {
-        ContentView()
-      }
+        EmptyView()   // ✅ 아무 것도 안 띄움
     }
   }
 }
